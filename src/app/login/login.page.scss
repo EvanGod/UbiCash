@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 400px;
+  max-width: 400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0a192f, #172a45);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.logo-container {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.logo {
+  max-width: 50%;
+  height: auto;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.input-item {
+  --background: transparent;
+  --color: white;
+  --border-radius: 10px;
+  margin-bottom: 12px;
+  --border-color: #00b4d8; 
+}
+
+ion-input {
+  font-size: 16px;
+  color: white;
+}
+
+ion-input:focus {
+  --box-shadow: 0 0 5px #00b4d8;  
+}
+
+.btn-register {
+  margin-top: 20px;
+  --background: linear-gradient(135deg, #0077b6, #00b4d8);
+  --color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 183, 255, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+.btn-register:hover {
+  transform: scale(1.05);
+  --background: linear-gradient(135deg, #00b4d8, #90e0ef);
+  box-shadow: 0 8px 16px rgba(0, 183, 255, 0.6);
+}
+
+.text-center {
+  text-align: center;
+  font-size: 15px;
+  color: #e0e0e0;
+  margin-top: 15px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: #00b4d8;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.login-link:hover {
+  color: #90e0ef;
+  text-decoration: underline;
+}
+
+ion-content {
+  --background: linear-gradient(135deg, #0a192f, #172a45); 
+}
+
+ion-label {
+  transition: all 0.2s ease;
+}
+
+.input-item ion-label {
+  transform: translateY(0); 
+}
+
+ion-input:focus + ion-label {
+  transform: translateY(-20px); 
+}
+
+ion-input:empty + ion-label {
+  transform: translateY(0); 
+}
+
+ion-input:focus {
+  --box-shadow: 0 0 5px #00b4d8;  
+  --border-color: #00b4d8;  
+}
