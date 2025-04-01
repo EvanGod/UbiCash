@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Gasto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2 class="title">Nuevo Gasto</h2>
+
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="regresarInicio()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+    
+    
+    
+    <form (ngSubmit)="guardarGasto()">
+      <ion-item class="input-item">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="gasto.nombre" name="nombre" required></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="gasto.descripcion" name="descripcion"></ion-textarea>
+      </ion-item>
+
+      <ion-item class="input-item">
+        <ion-label position="floating">Costo</ion-label>
+        <ion-input type="number" [(ngModel)]="gasto.costo" name="costo" required></ion-input>
+      </ion-item>
+
+
+      <ion-item class="input-item">
+        <ion-label>Imagen</ion-label>
+        <ion-button expand="block" (click)="tomarFoto()">Tomar o seleccionar imagen</ion-button>
+      </ion-item>
+
+      <img *ngIf="imagen" [src]="imagen" alt="Imagen seleccionada" class="preview-img" />
+
+      <ion-button expand="full" class="btn-register" type="submit">Guardar Gasto</ion-button>
+    </form>
+  </div>
+</ion-content>
