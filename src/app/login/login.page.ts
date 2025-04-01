@@ -40,14 +40,13 @@ export class LoginPage {
     }).subscribe(
       async (response: any) => {
         await loading.dismiss();
-        localStorage.setItem('token', response.token); 
-        console.log(localStorage['token']);
-        this.showAlert('Login', 'Página en mantenimiento');
-        //this.router.navigate(['/home']);
+        sessionStorage.setItem('token', response.token);
+        console.log('Token guardado:', sessionStorage.getItem('token'));
+        this.router.navigate(['/inicio']);
       },
       async (error) => {
         await loading.dismiss();
-        const errorMessage = error.error?.message || 'Credenciales inválidas.';
+        const errorMessage = error?.error?.message || 'Error de conexión. Inténtalo de nuevo.';
         this.showAlert('Error', errorMessage);
       }
     );

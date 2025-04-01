@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://backend-1002994682941.us-central1.run.app'
+  apiUrl: 'http://localhost:5000'
 };
 
 /*

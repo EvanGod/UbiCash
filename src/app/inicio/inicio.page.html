@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Gastos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header-container">
+    <h2 class="title">Lista de Gastos</h2>
+    <ion-button class="btn-logout" (click)="cerrarSesion()">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Cerrar Sesión
+    </ion-button>
+  </div>
+
+  <div class="container">
+    <ng-container *ngIf="gastos.length > 0; else noGastos">
+      <div class="gastos-grid">
+        <ion-card *ngFor="let gasto of gastos">
+          <img *ngIf="gasto.imagen" [src]="gasto.imagen" alt="Imagen del gasto" class="gasto-img"/>
+          <ion-card-header>
+            <ion-card-title>{{ gasto.nombre }}</ion-card-title>
+            <ion-card-subtitle>${{ gasto.costo | number: '1.2-2' }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ gasto.descripcion }}</p>
+          </ion-card-content>
+
+          <ion-card-content class="button-container">
+            <ion-button fill="outline" class="left-button" (click)="verEnMapa(gasto.ubicacion.coordinates[1], gasto.ubicacion.coordinates[0])">
+              <ion-icon name="map-outline"></ion-icon>
+              Ver en mapa
+            </ion-button>
+
+            <ion-button fill="solid" color="danger" class="right-button" (click)="confirmarEliminarGasto(gasto._id)">
+              <ion-icon name="trash-outline"></ion-icon>
+              Eliminar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ng-container>
+
+    <ng-template #noGastos>
+      <div class="no-gastos">
+        <ion-icon name="wallet-outline"></ion-icon>
+        <p>No hay gastos registrados</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="agregarGasto()">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

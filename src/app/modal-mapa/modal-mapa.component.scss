@@ -1,0 +1,46 @@
+ion-header {
+    --background: linear-gradient(135deg, #0077b6, #00b4d8);
+    --color: white;
+    color: white;
+    text-align: center;
+  }
+  
+  ion-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  ion-button {
+    --background: red;
+    --color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  }
+  
+  ion-button:hover {
+    transform: scale(1.1);
+    --background: darkred;
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6);
+  }
+  
+  .iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  iframe {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 183, 255, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+  }
+  
+  iframe:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 183, 255, 0.6);
+  }
+  
