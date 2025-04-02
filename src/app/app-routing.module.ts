@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'politicas',
     loadChildren: () => import('./politicas/politicas.module').then( m => m.PoliticasPageModule)
+  },  {
+    path: 'eliminacion',
+    loadChildren: () => import('./eliminacion/eliminacion.module').then( m => m.EliminacionPageModule)
   },
+
 ];
 
 @NgModule({
