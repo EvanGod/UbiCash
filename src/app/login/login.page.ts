@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AlertController, LoadingController  } from '@ionic/angular';
@@ -20,6 +20,17 @@ export class LoginPage {
     private alertController: AlertController,
     private loadingController: LoadingController
   ) {}
+
+  ngOnInit() {
+    this.verificarSesion();
+  }
+
+  verificarSesion() {
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      this.router.navigate(['/inicio']);
+    }
+  }
 
   async login() {
     if (!this.email || !this.password) {

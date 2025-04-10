@@ -161,4 +161,8 @@ export class InicioPage implements OnInit {
     });
     return await modal.present();
   }
+  async handleRefresh(event: any) {
+    await this.obtenerGastos();
+    event.target.complete(); 
+  }
 }
